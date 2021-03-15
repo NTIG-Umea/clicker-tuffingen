@@ -91,19 +91,34 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
   {
-    name: 'Arg gubbe',
+    name: 'kärring som bakar bullar',
     cost: 10,
     amount: 1
   },
   {
-    name: 'Internettroll',
+    name: 'Sketet bageri',
     cost: 100,
     amount: 10
   },
   {
-    name: 'Twitterbot',
+    name: 'Övergiven wienerbrödfabrik',
     cost: 1000,
     amount: 100
+  },
+  {
+    name: 'Danska slavar',
+    cost: 3000,
+    amount: 300
+  },
+  {
+    name: 'Effektivt konditori',
+    cost: 5000,
+    amount: 500
+  },
+  {
+    name: 'Fabians fabulösa fabrik',
+    cost: 7000,
+    amount: 700
   }
 ]
 
@@ -132,8 +147,8 @@ function createCard(upgrade) {
   header.classList.add('title');
   const cost = document.createElement('p');
 
-  header.textContent = upgrade.name + ', +' + upgrade.amount + ' likes per sekund.';
-  cost.textContent = 'Köp för ' + upgrade.cost + ' likes';
+  header.textContent = upgrade.name + ', +' + upgrade.amount + ' Fikabröd per sekund.';
+  cost.textContent = 'Köp för ' + upgrade.cost + ' fikabröd';
 
   card.addEventListener('click', (e) => {
     if (money >= upgrade.cost) {
@@ -143,9 +158,9 @@ function createCard(upgrade) {
       upgrade.cost *= 1.5;
       cost.textContent = 'Köp för ' + upgrade.cost + ' likes';
       moneyPerSecond += upgrade.amount;
-      message('Grattis du har en ny följare!', 'success');
+      message('NY SLAVKRAFT UPPLÅST!', 'success');
     } else {
-      message('Du har inte råd.', 'warning');
+      message('FATTIGLAPP!! BAKA MER FIKA!!.', 'warning');
     }
   });
 
